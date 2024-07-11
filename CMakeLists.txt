@@ -16,7 +16,7 @@ add_executable(hello_pio
     main.cpp
 )
 
-# pico_generate_pio_header(hello_pio ${CMAKE_CURRENT_LIST_DIR}/hello.pio)
+pico_generate_pio_header(hello_pio ${CMAKE_CURRENT_LIST_DIR}/hello.pio)
 
 target_sources(hello_pio PUBLIC
         ${CMAKE_CURRENT_LIST_DIR}/main.cpp
@@ -28,6 +28,7 @@ target_sources(hello_pio PUBLIC
 target_link_libraries(hello_pio PUBLIC 
 	pico_stdlib 
     hardware_pio
+    
 	)
 
 target_include_directories(hello_pio PUBLIC
